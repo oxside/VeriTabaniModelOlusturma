@@ -134,7 +134,7 @@ namespace VeriTabaniModelOlusturma
         private void button1_Click_1(object sender, EventArgs e)
         {
             FolderBrowserDialog fileDialog = new FolderBrowserDialog();
-            
+            fileDialog.SelectedPath = textBox1.Text;
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text=fileDialog.SelectedPath;
