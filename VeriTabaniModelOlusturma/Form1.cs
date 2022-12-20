@@ -174,7 +174,7 @@ namespace VeriTabaniModelOlusturma
 
                     }
                     yolKademe = yolKademe + (i + 1 != Yol.Length ? "." : "");
-                    yolOlusur.AppendLine(yolKademe);
+                    yolOlusur.Append(yolKademe);
                     ModelNamespace=yolOlusur.ToString();
                 }
 
@@ -183,7 +183,7 @@ namespace VeriTabaniModelOlusturma
         async Task ModelYazAsync(string _model,string _modelAdi)
         {
             StringBuilder build = new StringBuilder();
-            build.Append("using Microsoft.EntityFrameworkCore.Metadata.Internal;\r\nusing System;\r\nusing System.ComponentModel.DataAnnotations;\r\nusing System.ComponentModel.DataAnnotations.Schema;\r\n\r\nnamespace " + $"{ProjeAdi}.Models.Banka\r\n" + "{   public class " + $"{_modelAdi}" + "\r\n    {\r\n");
+            build.Append("using Microsoft.EntityFrameworkCore.Metadata.Internal;\r\nusing System;\r\nusing System.ComponentModel.DataAnnotations;\r\nusing System.ComponentModel.DataAnnotations.Schema;\r\n\r\nnamespace " + $"{ModelNamespace}\r\n" + "{   public class " + $"{_modelAdi}" + "\r\n    {\r\n");
             build.Append(_model);
             build.Append("\r\n    }\r\n}");
             StreamWriter stream = new StreamWriter(textBox1.Text + $@"\{_modelAdi}.cs");
