@@ -1,4 +1,4 @@
-﻿namespace VeriTabaniModelOlusturma
+namespace VeriTabaniModelOlusturma
 {
     partial class Form1
     {
@@ -31,18 +31,22 @@
             this.txtServer = new System.Windows.Forms.TextBox();
             this.btnTest = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSifre = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.cmbVerTabList = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSifre = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtModelOlusum = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtprojeAdi = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +60,7 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(362, 94);
+            this.btnTest.Location = new System.Drawing.Point(443, 73);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(75, 41);
             this.btnTest.TabIndex = 1;
@@ -66,12 +70,16 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.cmbVerTabList);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtSifre);
+            this.panel1.Controls.Add(this.txtprojeAdi);
             this.panel1.Controls.Add(this.txtUser);
             this.panel1.Controls.Add(this.txtServer);
             this.panel1.Controls.Add(this.btnTest);
@@ -81,39 +89,35 @@
             this.panel1.Size = new System.Drawing.Size(1002, 202);
             this.panel1.TabIndex = 2;
             // 
-            // label1
+            // button3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Server";
+            this.button3.Location = new System.Drawing.Point(362, 120);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 29);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Proje Seç";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // txtUser
+            // cmbVerTabList
             // 
-            this.txtUser.Location = new System.Drawing.Point(81, 40);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(356, 20);
-            this.txtUser.TabIndex = 0;
-            this.txtUser.Text = "sa";
+            this.cmbVerTabList.DisplayMember = "name";
+            this.cmbVerTabList.FormattingEnabled = true;
+            this.cmbVerTabList.Location = new System.Drawing.Point(81, 93);
+            this.cmbVerTabList.Name = "cmbVerTabList";
+            this.cmbVerTabList.Size = new System.Drawing.Size(356, 21);
+            this.cmbVerTabList.TabIndex = 3;
+            this.cmbVerTabList.ValueMember = "name";
+            this.cmbVerTabList.SelectedValueChanged += new System.EventHandler(this.cmbVerTabList_SelectedValueChanged);
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Sql User";
-            // 
-            // txtSifre
-            // 
-            this.txtSifre.Location = new System.Drawing.Point(81, 68);
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(356, 20);
-            this.txtSifre.TabIndex = 0;
-            this.txtSifre.Text = "12345";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Veri Tabanı";
             // 
             // label3
             // 
@@ -124,25 +128,39 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Sql Şifre";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 162);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Veri Tabanı";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Sql User";
             // 
-            // cmbVerTabList
+            // label1
             // 
-            this.cmbVerTabList.DisplayMember = "name";
-            this.cmbVerTabList.FormattingEnabled = true;
-            this.cmbVerTabList.Location = new System.Drawing.Point(81, 159);
-            this.cmbVerTabList.Name = "cmbVerTabList";
-            this.cmbVerTabList.Size = new System.Drawing.Size(356, 21);
-            this.cmbVerTabList.TabIndex = 3;
-            this.cmbVerTabList.ValueMember = "name";
-            this.cmbVerTabList.SelectedValueChanged += new System.EventHandler(this.cmbVerTabList_SelectedValueChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Server";
+            // 
+            // txtSifre
+            // 
+            this.txtSifre.Location = new System.Drawing.Point(81, 66);
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Size = new System.Drawing.Size(356, 20);
+            this.txtSifre.TabIndex = 0;
+            this.txtSifre.Text = "12345";
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(81, 39);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(356, 20);
+            this.txtUser.TabIndex = 0;
+            this.txtUser.Text = "sa";
             // 
             // listBox1
             // 
@@ -187,9 +205,36 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 58);
             this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
+            this.button2.Text = "Modeli Oluştur";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtprojeAdi
+            // 
+            this.txtprojeAdi.Location = new System.Drawing.Point(81, 125);
+            this.txtprojeAdi.Name = "txtprojeAdi";
+            this.txtprojeAdi.Size = new System.Drawing.Size(264, 20);
+            this.txtprojeAdi.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 132);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Proje Adı";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(15, 177);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(88, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Çoklu Seçim ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
@@ -228,6 +273,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtprojeAdi;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
